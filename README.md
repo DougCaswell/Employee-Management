@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app, The Employee Management App, is being created to fulfill the scope of a coding challenge I have recieved.  See instructions below.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+CRUD Coding Challenge
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Congratulations on making it through the first-round of screening. Your resume was impressive. We'd like to see your coding skills, but we don't believe in white boarding. In fact, did you know that most developers don't write more than 5-6 lines of codes without referencing documentation, Googling, Stack Overflowing etc.? So, we don't expect you to do it for us under pressure. Instead, we have a brief assignment for you.
 
-### `npm test`
+ 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instructions:
 
-### `npm run build`
+ 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create a simple CRUD application in React.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- Use Sass for easy and quick CSS.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- When you're done, deploy your code to a hosting site.
 
-### `npm run eject`
+- We are mostly looking to see your coding style, an eye for design and coding best practices (refactoring, semantic/clean code, dry, etc.).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Imagine another developer is going to pick up your codebase and work on it at a later date.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Bonus points if you use Hooks, MySQL or TDD.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The Application:
 
-## Learn More
+ 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You're creating an ultra-simplified employee management app. Our application needs to be able to:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Add new employees (C)
 
-### Code Splitting
+- View all current employees in a simple table (R)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Update employee details (U)
 
-### Analyzing the Bundle Size
+- Delete employees that leave the company (D)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+ 
 
-### Making a Progressive Web App
+For each employee, the HR manager needs to see the following attributes in a simple table:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- Employee ID number
 
-### Advanced Configuration
+- First name
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Last name
 
-### Deployment
+- Email address
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Phone number
 
-### `npm run build` fails to minify
+ 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+That's it. Other than that, feel free to get creative.
