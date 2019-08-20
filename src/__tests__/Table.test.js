@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Table from '../Table';
+import axios from 'axios';
 
 describe('Table', () => {
     let mountedTable;
@@ -31,7 +32,28 @@ describe('Table', () => {
         let employees = table.find('tbody').find('tr');
 
         expect(employees.length).toBeGreaterThanOrEqual(1);
-
     });
+
+    it('has employee array on state', async () => {
+        let instance = mountedTable.instance()
+        expect(instance.state).toHaveProperty('employees', []);
+    })
+
+    // it('calls axios.get with correct url', () => {
+    //     return mountedTable.instance().componentDidMount().then(() => {
+    //         expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/data/shops.json');
+    //     });
+    // })
+
+    // it('updates state with api data', () => {
+    //     return mountedTable.instance().componentDidMount().then(() => {
+    //         expect(mountedTable.state()).toHaveProperty('shops', [
+    //             {
+    //                 "location": "test location",
+    //                 "address": "123 Portland Dr"
+    //             }
+    //         ]);
+    //     });
+    // })
 
 });

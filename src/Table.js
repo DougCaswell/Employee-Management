@@ -1,7 +1,38 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Table extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            employees: []
+        }
+    }
+
+    async componentDidMount() {
+        let res = await axios.get('/api/employees');
+        this.setState({
+            employees: res.data
+        });
+    }
+
     render() {
+        let mappedEmployees = <tr></tr>;
+        if (this.state.employees[0]) {
+            mappedEmployees = this.state.employees.map(employee => {
+                return (
+                    <tr key={employee.employee_id}>
+                        <td>{employee.employee_id}</td>
+                        <td>{employee.first_name}</td>
+                        <td>{employee.last_name}</td>
+                        <td>{employee.email_address}</td>
+                        <td>{employee.phone_number}</td>
+                    </tr>
+                );
+            });
+        }
+
         return (
             <table>
                 <thead>
@@ -14,27 +45,7 @@ class Table extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Doug</td>
-                        <td>Caswell</td>
-                        <td>dougcaswell@gmail.com</td>
-                        <td>(903)244-1402</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Marvin</td>
-                        <td>Robot</td>
-                        <td>b.t.s.o.a.p.@email.com</td>
-                        <td>(123)456-7890</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Mys</td>
-                        <td>Terry</td>
-                        <td>unknown@nearby.com</td>
-                        <td>(098)765-4321</td>
-                    </tr>
+                    {mappedEmployees}
                 </tbody>
             </table>
         )
