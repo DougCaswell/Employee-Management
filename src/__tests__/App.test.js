@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from '../App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App', () => {
+
+  it('renders without crashing', () => {
+    shallow(<App />);
+  });
+
+  it('renders the Table component', () => {
+    let mountedApp = shallow(<App />);
+    const Table = mountedApp.find('Table');
+    expect(Table.length).toBe(1);
+  });
 });
