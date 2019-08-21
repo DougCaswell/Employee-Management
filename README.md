@@ -1,5 +1,7 @@
 This app, The Employee Management App, is being created to fulfill the scope of a coding challenge I have recieved.  See instructions below.
 
+I ended up using some testing and PostgreSQL for the bonus sections
+
 
 
 CRUD Coding Challenge
