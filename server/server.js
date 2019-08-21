@@ -15,9 +15,14 @@ app.get('/api/employees', async (req, res) => {
         return res.sendStatus(500)
     });
     return res.status(200).send(employees);
-})
+});
 
-
+app.post('/api/new', async (req, res) => {
+    const { firstName, lastName, email, phone } = req.body;
+    const db = req.app.get('db');
+    const employees = await db.new_employee(firstName, lastName, email, phone);
+    res.status(200).send(employees);
+});
 
 
 massive(CONNECTION_STRING).then(db => {
@@ -25,4 +30,4 @@ massive(CONNECTION_STRING).then(db => {
     app.listen(SERVER_PORT, () => {
         console.log(`Server is running on port: ${SERVER_PORT}`);
     });
-})
+});
