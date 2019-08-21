@@ -8,6 +8,8 @@ let app = express();
 
 app.use(express.json());
 
+app.use(express.static(`${__dirname}/../build`));
+
 app.post('/api/new', async (req, res) => {
     const { firstName, lastName, email, phone } = req.body;
     const db = req.app.get('db');
