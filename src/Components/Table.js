@@ -83,10 +83,10 @@ class Table extends Component {
                     return (
                         <tr key={employee.employee_id}>
                             <td>{employee.employee_id}</td>
-                            <td><input value={this.state.firstName} onChange={(e) => this.setState({ firstName: e.target.value })} /></td>
-                            <td><input value={this.state.lastName} onChange={(e) => this.setState({ lastName: e.target.value })} /></td>
-                            <td><input value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} /></td>
-                            <td><input value={this.state.phone} onChange={(e) => this.setState({ phone: e.target.value })} /></td>
+                            <td><input type='text' value={this.state.firstName} onChange={(e) => this.setState({ firstName: e.target.value })} /></td>
+                            <td><input type='text' value={this.state.lastName} onChange={(e) => this.setState({ lastName: e.target.value })} /></td>
+                            <td><input type='email' value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} /></td>
+                            <td><input type='text' value={this.state.phone} onChange={(e) => this.setState({ phone: e.target.value })} /></td>
                             <td>
                                 <input type='button' value='Save' onClick={() => this.saveEmployee()} />
                             </td>
@@ -121,21 +121,24 @@ class Table extends Component {
 
 
         return (
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Employee Id Number</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email Address</th>
-                            <th>Phone Number</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.mapEmployees()}
-                    </tbody>
-                </table>
+            <div className='TableWrapper'>
+                <div>
+                    <h1>Employee Management App</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Employee Id Number</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.mapEmployees()}
+                        </tbody>
+                    </table>
+                </div>
                 {this.state.new ? <AddEmployee cb={this.getEmployees} /> : ''}
             </div>
         )
