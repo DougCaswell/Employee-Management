@@ -9,7 +9,6 @@ class Table extends Component {
         this.state = {
             employees: [],
             editId: -1,
-            new: true,
             firstName: '',
             lastName: '',
             email: '',
@@ -23,7 +22,6 @@ class Table extends Component {
     getEmployees(list) {
         this.setState({
             employees: list,
-            new: false
         });
     }
 
@@ -139,7 +137,7 @@ class Table extends Component {
                         </tbody>
                     </table>
                 </div>
-                {this.state.new ? <AddEmployee cb={this.getEmployees} /> : ''}
+                <AddEmployee cb={this.getEmployees} />
             </div>
         )
     }
