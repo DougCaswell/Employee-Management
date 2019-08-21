@@ -1,7 +1,6 @@
 {
   "name": "employee-management",
   "version": "0.1.0",
-  "proxy": "http://localhost:4400",
   "main": "./server/server.js",
   "private": true,
   "dependencies": {
@@ -36,5 +35,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:4444"
 }
