@@ -8,6 +8,13 @@ let app = express();
 
 app.use(express.json());
 
+app.post('/api/new', async (req, res) => {
+    const { firstName, lastName, email, phone } = req.body;
+    const db = req.app.get('db');
+    const employees = await db.new_employee(firstName, lastName, email, phone);
+    res.status(200).send(employees);
+});
+
 app.get('/api/employees', async (req, res) => {
     const db = req.app.get('db');
     const employees = await db.get_all_employees().catch((error) => {
@@ -17,13 +24,19 @@ app.get('/api/employees', async (req, res) => {
     return res.status(200).send(employees);
 });
 
-app.post('/api/new', async (req, res) => {
-    const { firstName, lastName, email, phone } = req.body;
+app.put('/api/edit', async (req, res) => {
+    const { editId, firstName, lastName, email, phone } = req.body;
     const db = req.app.get('db');
-    const employees = await db.new_employee(firstName, lastName, email, phone);
+    const employees = await db.update_employee(editId, firstName, lastName, email, phone);
     res.status(200).send(employees);
-});
+})
 
+app.delete('/api/fire/:id', async (req, res) => {
+    const { id } = req.params;
+    const db = req.app.get('db');
+    const employees = await db.fire_employee(id);
+    res.status(200).send(employees);
+})
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);

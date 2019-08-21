@@ -29,15 +29,15 @@ class AddEmployee extends Component {
                 <h2>Add new employee to system</h2>
                 <form onSubmit={() => this.add()}>
                     <div className="left">
-                        <label for="firstName">First Name</label>
+                        <label htmlFor="firstName">First Name</label>
                         <input type="text" onChange={e => this.setState({ firstName: e.target.value })} name="firstName" id="firstName" required />
-                        <label for="lastName">Last Name</label>
+                        <label htmlFor="lastName">Last Name</label>
                         <input type="text" onChange={e => this.setState({ lastName: e.target.value })} name="lastName" id="lastName" required />
                     </div>
                     <div className="right">
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input type="email" onChange={e => this.setState({ email: e.target.value })} name="email" id="email" required />
-                        <label for="phone">Phone</label>
+                        <label htmlFor="phone">Phone</label>
                         <input type="text" onChange={e => this.setState({ phone: e.target.value })} name="phone" id="phone" required />
                     </div>
                     <div className="submit">
